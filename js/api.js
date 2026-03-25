@@ -10,6 +10,5 @@ export async function loadData(){
     }
     catch(error){
         console.error('Не получилось загрузить данные:', error);
-        return null
     }
 }
