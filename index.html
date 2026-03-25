@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-files/reset.css">
+    <link rel="stylesheet" href="css-files/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+  <h1>Currency Converter</h1>
+
+  <div class="converter">
+    <input type="number" id="amount" placeholder="Введите сумму" />
+
+    <div class="selects">
+      <select id="from"></select>
+      <span>→</span>
+      <select id="to"></select>
+    </div>
+
+    <button id="convertBtn">Конвертировать</button>
+
+    <p id="result"></p>
+  </div>
+
+  <div class="history">
+    <h2>История</h2>
+    <ul id="historyList"></ul>
+  </div>
+</div>
+</body>
+</html>
