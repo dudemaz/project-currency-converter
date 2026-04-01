@@ -1,4 +1,4 @@
-import { FullKeyCurrency } from './apiAdapter.js'
+import { LoadData } from './api.js'
 import { convertCurrency } from './convert.js'
 import { renderCurrencySelectsOptions } from './ui.js'
 import { saveToLocalStorage,loadFromLocalStorage } from './storage.js'
@@ -10,7 +10,7 @@ async function init(){
         if (cachedRates) {
             allRates = cachedRates;
         } else {
-            allRates = await FullKeyCurrency();
+            allRates = await LoadData();
             saveToLocalStorage(allRates);
         }
         renderCurrencySelectsOptions(allRates);

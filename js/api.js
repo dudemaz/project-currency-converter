@@ -1,33 +1,15 @@
-
-export async function loadData(){
-    try{
-        const url = 'https://open.er-api.com/v6/latest/EUR'; 
-        const response = await fetch(url);
-        if(!response.ok){throw new Error(`http Ошибка ${response.status}`)}
-        const data = await response.json(); 
-        if (data.result !== "success") {throw new Error('API вернул ошибку')}
-        console.log('Курсы успешно загружены')
-        return data.rates 
-        
-    }
-    catch(error){
-        console.error('Не получилось загрузить данные:', error);
-        return null
-    }
-}
-export async function LoadDataFullOptions() {
+export async function LoadData() {
     try {
-        let API_KEY = 'YourApiKey:> my key hide:))'
-        const url = `https://v6.exchangerate-api.com/v6/API_KEY/codes`;
-        const response = await fetch(url)
-        if(!response.ok){throw new Error(`http Ошибка ${response.status}`)}
-        const data = await response.json()
-        if(data.result !== 'success'){throw new Error('API вернул ошибку')}
-        return data.supported_codes
-        
+    let url = 'https://www.cbr-xml-daily.ru/daily_json.js'
+    const response = await fetch(url)
+    if(!response.ok){throw new Error(`HTTP ошибка! статус: ${response.status}`)}
+    const data = await response.json()
+    if (!data || !data.Valute) {
+    throw new Error('API вернул некорректные данные');
+        }
+        return data
     } catch (error) {
-        console.error('Не получилось загрузить данные:', error);
+        console.error('Не получилось загрузить данные:', error)
         return null
     }
 }
-
