@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css-files/reset.css">
     <link rel="stylesheet" href="css-files/style.css">
     <script defer type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <title>Currency Converter</title>
 </head>
 <body>
@@ -13,11 +15,16 @@
   <h1>Currency Converter</h1>
 
   <div class="converter">
-    <input type="number" id="amount" placeholder="Введите сумму" />
+    <input
+    type="number"
+    id="amount"
+    placeholder="Введите сумму"
+    
+    />
 
     <div class="selects">
       <select id="from"></select>
-      <span>→</span>
+      <span id="swap">→</span>
       <select id="to"></select>
     </div>
 
