@@ -1,4 +1,4 @@
-import { CustomCursor,Spotlight,Parallax } from './mouse-animations.min.js';
+import { CustomCursor,Spotlight,Parallax } from './mouse-animations.js';
 
 new CustomCursor({
   innerSize: 9,

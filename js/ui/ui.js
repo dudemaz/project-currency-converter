@@ -1,4 +1,4 @@
-import {convertCurrency} from './convert.js'
+import {convertCurrency} from '../features/convert/convert.js'
 import * as nodes from './domlists.js'
 
 

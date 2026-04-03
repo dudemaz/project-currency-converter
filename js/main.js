@@ -1,7 +1,7 @@
-import { LoadData } from './api.js'
-import { renderCurrencySelectsOptions , currentresult } from './ui.js'
-import { saveToLocalStorage,loadFromLocalStorage } from './storage.js'
-import * as nodes from './domlists.js'
+import { LoadData } from './api/api.js'
+import { renderCurrencySelectsOptions , currentresult } from './ui/ui.js'
+import { saveToLocalStorage,loadFromLocalStorage } from './storage/storage.js'
+import * as nodes from './ui/domlists.js'
 let allRates = null;
 export async function init(){
     try {
