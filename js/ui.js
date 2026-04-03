@@ -1,6 +1,8 @@
 import {convertCurrency} from './convert.js'
 import * as nodes from './domlists.js'
 
+
+
 export function renderCurrencySelectsOptions(rates) {
     const fromSelect = document.getElementById('from');
     const toSelect = document.getElementById('to');
@@ -12,7 +14,7 @@ export function renderCurrencySelectsOptions(rates) {
     }
     const rubOption = document.createElement('option');
     rubOption.value = 1;
-    rubOption.textContent = `RUB — Российский рубль (1 ₽)`;
+    rubOption.textContent = `RUB Российский рубль (1 ₽)`;
     fromSelect.appendChild(rubOption);
     toSelect.appendChild(rubOption.cloneNode(true));
     for (const [code, currency] of Object.entries(rates.Valute)) {

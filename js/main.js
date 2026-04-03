@@ -3,7 +3,7 @@ import { renderCurrencySelectsOptions , currentresult } from './ui.js'
 import { saveToLocalStorage,loadFromLocalStorage } from './storage.js'
 import * as nodes from './domlists.js'
 let allRates = null;
-async function init(){
+export async function init(){
     try {
         const cachedRates = loadFromLocalStorage();
         if (cachedRates) {
@@ -19,7 +19,6 @@ async function init(){
             currentresult()
         })
        nodes.button.addEventListener('click', (e) => {
-        e.preventDefault();
         currentresult();
 });
                     
@@ -29,3 +28,4 @@ async function init(){
     }
 }
 init()
+

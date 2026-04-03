@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "dotenv": "^17.3.1"
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.12.74",
+    "dotenv": "^17.3.1",
+    "jquery": "^4.0.0",
+    "mouse-animations": "^0.3.0"
   }
 }
