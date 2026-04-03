@@ -2,6 +2,9 @@
 
 Веб-проект на чистом JavaScript для конвертации валют с API ЦБ РФ и сохранением курса в `localStorage`.
 
+## Статус: Backend Ready / UI Pending
+Основная часть логики уже написана и работает. Визуально проект пока выглядит минималистично (в стиле «голый HTML»), так как сейчас я сосредоточен на функционале. Наведение красоты и работа над UI — следующий большой этап.
+
 ## 🚀 Статус проекта
 
 - Рабочий минимальный функционал:
@@ -34,7 +37,7 @@
 
 1. Клонировать репозиторий:
    ```bash
-   git clone <https://github.com/dudemaz/project-currency-converter>
+   git clone https://github.com/dudemaz/project-currency-converter
    cd "project-currency converter"
    ```
 
