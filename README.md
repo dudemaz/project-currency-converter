@@ -34,7 +34,7 @@
 
 1. Клонировать репозиторий:
    ```bash
-   git clone <https://github.com/dudemaz/project-currency-converter>
+   git clone https://github.com/dudemaz/project-currency-converter
    cd "project-currency converter"
    ```
 
