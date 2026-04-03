@@ -14,4 +14,4 @@ export function historylist(from,to,result){
     conteiner.appendChild(toHistory)
     conteiner.appendChild(resultHistory)    
 
-}
+}//доделываю 
