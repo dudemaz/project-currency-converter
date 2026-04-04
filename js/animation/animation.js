@@ -6,6 +6,8 @@ new CustomCursor({
   innerColor: '#4c19e6',
   outerColor: 'rgba(167, 139, 250, 0.15)',
   smoothness: 0.2,
+  selector: ''
+  
 })
 new Spotlight({
   selector: '.spotlight-target',

@@ -80,3 +80,14 @@
   color: #ffffff;
   border-bottom: 1px solid #1f2937;
 }
+
+dialog {
+  background: #ffffff;
+  border: 1px solid #0063ef;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(227, 225, 225, 0.5);
+  margin: auto;
+  cursor: auto;
+}

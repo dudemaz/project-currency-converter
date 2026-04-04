@@ -2,6 +2,7 @@ import { LoadData } from './api/api.js'
 import { renderCurrencySelectsOptions , currentresult } from './ui/ui.js'
 import { saveToLocalStorage,loadFromLocalStorage } from './storage/storage.js'
 import * as nodes from './ui/domlists.js'
+import {historylist} from './features/history/historyLogic.js'
 let allRates = null;
 export async function init(){
     try {
@@ -20,7 +21,16 @@ export async function init(){
         })
        nodes.button.addEventListener('click', (e) => {
         currentresult();
-});
+        historylist(nodes.from.selectedOptions[0].text,
+                    nodes.to.selectedOptions[0].text, 
+                    nodes.result.textContent)
+                                    });
+        nodes.buttonToOpenWindow.addEventListener('click',()=>{
+            nodes.modalWindow.show()
+        })
+        nodes.buttonToCloweWindow.addEventListener('click',()=>{
+            nodes.modalWindow.close()
+        })
                     
     } catch (error) {
         console.error('нету данных')

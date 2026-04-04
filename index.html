@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
-
-
-
     <title>Currency Converter</title>
 </head>
 <body>
@@ -41,7 +38,11 @@
 
   <div class="history">
     <h2>История</h2>
-    <ul id="historyList"></ul>
+    <button id="openHistory">Открыть</button>
+    <dialog class="" id="myDialog">
+    <div id="historyblock"></div>
+    <button id="closeBtn">Закрыть</button>
+    </dialog>
   </div>
 </div>
 </body>
