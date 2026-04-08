@@ -1,5 +1,6 @@
 export const from = document.getElementById('from')
 export const to = document.getElementById('to')
+export const swapButton = document.getElementById('swap')
 export const button = document.getElementById('convertBtn')
 export const result = document.getElementById('result')
 export const amount = document.getElementById('amount') 

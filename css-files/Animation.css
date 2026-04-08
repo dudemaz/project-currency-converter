@@ -1,25 +1,25 @@
 
 @-webkit-keyframes text-focus-in {
   0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
+    -webkit-filter: blur(var(--blur-text-start));
+            filter: blur(var(--blur-text-start));
     opacity: 0;
   }
   100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
+    -webkit-filter: blur(var(--blur-text-end));
+            filter: blur(var(--blur-text-end));
     opacity: 1;
   }
 }
 @keyframes text-focus-in {
   0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
+    -webkit-filter: blur(var(--blur-text-start));
+            filter: blur(var(--blur-text-start));
     opacity: 0;
   }
   100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
+    -webkit-filter: blur(var(--blur-text-end));
+            filter: blur(var(--blur-text-end));
     opacity: 1;
   }
 }

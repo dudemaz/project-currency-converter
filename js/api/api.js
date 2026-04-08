@@ -14,4 +14,3 @@ export async function LoadData() {
         return null
     }
 }
-LoadData()
