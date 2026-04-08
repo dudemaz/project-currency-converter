@@ -1,2 +1,12 @@
-import{a as e,c as t,i as n,l as r,n as i,o as a,r as o,s,t as c,u as l}from"../../node_modules/mouse-animations/dist/src.js";export{t as CustomCursor,c as Image,i as Invert,s as Magnetic,e as Parallax,a as Particles,r as Ripple,o as Spotlight,n as Tilt,l as Trail};
-//Выташил из Node библеотеку потому что использую Live server
+export {
+  CustomCursor,
+  Image,
+  Invert,
+  Magnetic,
+  Parallax,
+  Particles,
+  Ripple,
+  Spotlight,
+  Tilt,
+  Trail,
+} from "https://cdn.jsdelivr.net/npm/mouse-animations@1.0.10/+esm";
