@@ -2,6 +2,7 @@
 @import "fonts.css";
 @import "variables.css";
 @import "global.css";
+@import "block-history-data.css";
 
 .loader-screen {
     position: fixed;

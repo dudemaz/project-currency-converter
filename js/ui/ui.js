@@ -1,20 +1,23 @@
 import {convertCurrency} from '../features/convert/convert.js'
 import * as nodes from './domlists.js'
+import { LoadData } from '../api/api.js';
 
 
 
 export function renderCurrencySelectsOptions(rates) {
     const fromSelect = document.getElementById('from');
     const toSelect = document.getElementById('to');
-    fromSelect.value = 'USD'
-    toSelect.value = 'EUR'
+    fromSelect.innerHTML = '';  
+    toSelect.innerHTML = '';
     if (!rates?.Valute) {
         console.error('Нет данных Valute в rates');
         return;
     }
+    
     const rubOption = document.createElement('option');
+    
     rubOption.value = 1;
-    rubOption.textContent = `RUB Российский рубль (1 ₽)`;
+    rubOption.textContent = `RUB Российский рубль`;
     fromSelect.appendChild(rubOption);
     toSelect.appendChild(rubOption.cloneNode(true));
     for (const [code, currency] of Object.entries(rates.Valute)) {
@@ -53,3 +56,22 @@ export function currentresult() { // Подтягивание value из dom э�
 
     nodes.result.textContent = finalResult.toFixed(4);
 }
+
+
+export async function loadRates(onLoaded = null) {
+    const input = document.getElementById('dateInput');
+    let date = input.value;
+    if (!date) {
+        alert('Выбери дату в календаре!');
+        return;
+    }
+    const data = await LoadData(date);
+    if (data) {
+        renderCurrencySelectsOptions(data);
+        if (onLoaded) onLoaded();
+        alert('Курсы загружены')
+    } else {
+        alert('Не удалось загрузить курсы на эту дату. Попробуй другую или проверь интернет.');
+    }
+}
+

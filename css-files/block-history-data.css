@@ -1,0 +1,11 @@
+.form-of-history-data{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 720px;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #dcdcdc;
+    background: #ffffff;
+    position: relative;
+}
