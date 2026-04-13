@@ -1,5 +1,7 @@
 export const from = document.getElementById('from')
 export const to = document.getElementById('to')
+export const loaderScreen = document.getElementById('loader-screen');
+export const mainApp = document.getElementById('app');
 export const swapButton = document.getElementById('swap')
 export const button = document.getElementById('convertBtn')
 export const result = document.getElementById('result')

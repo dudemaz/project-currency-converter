@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css-files/reset.css">
     <link rel="stylesheet" href="css-files/style.css">
-    <script type="module" src="./js/animation/animation.js"></script>
+    <link rel="stylesheet" href="css-files/reset.css">
+    <link rel="stylesheet" href="/assets/magic.css" />
     <script defer type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jh3y/whirl@2.0.0/css/whirl.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
     <title>Currency Converter</title>
 </head>
 <body>
-    <div class="app spotlight-target">
+  <div id="loader-screen" class="loader-screen">
+        <div class="whirl whirl-3"></div>           <!-- Можно поменять номер -->
+        <p>Загрузка актуальных курсов валют...</p>
+    </div>
+    <div id="app">
       <span class="parallax-target" id="DataCurrencyactually"></span>
-  <h1>Currency Converter</h1>
+  <h1 class="magictime puffIn">Currency Converter</h1>
 
   <div class="converter">
     <input

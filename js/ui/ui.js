@@ -34,6 +34,12 @@ export function swapSelectOptions() {
     const tempValue = fromSelect.value;
     fromSelect.value = toSelect.value;
     toSelect.value = tempValue;
+    const btn = nodes.swapButton
+    btn.classList.remove('magictime', 'puffIn');
+            void btn.offsetWidth;
+           setTimeout(() => {
+        btn.classList.add('magictime', 'puffIn');
+    }, 10);
 }
 
 export function currentresult() { // Подтягивание value из dom элементов и  вызов функции с формулой подсчета 

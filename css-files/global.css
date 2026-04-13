@@ -1,12 +1,9 @@
-document{
-    cursor: none;
-}
+
 body{
     font-family: var(--font-main);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--space-20);
-    cursor: none;
 }
 

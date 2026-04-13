@@ -3,7 +3,32 @@
 @import "variables.css";
 @import "global.css";
 
-.app {
+.loader-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0f172a;        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    z-index: 10000;
+    color: #e2e8f0;
+    font-size: 1.3rem;
+}
+
+.loader-screen p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+#app.hidden {
+    display: none !important;
+}
+#app {
   width: 100%;
   max-width: 720px;
   padding: 24px;
@@ -110,7 +135,7 @@ h1 {
 
 .choices {
   width: 100%;
-  margin-bottom: var(--space-0);
+  margin-bottom: 0 !important;
   border-radius: 10px;
   overflow: visible;
 }
@@ -184,6 +209,41 @@ dialog {
   width: min(92vw, 420px);
   margin: auto;
   cursor: auto;
+}
+
+#historyblock {
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-right: 4px;
+}
+
+.conteiner-history {
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 10px 12px;
+}
+
+.conteiner-history p {
+  margin: 0;
+  color: #222222;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+#historyblock::-webkit-scrollbar {
+  width: 8px;
+}
+
+#historyblock::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 999px;
 }
 
 @media (max-width: 768px) {
