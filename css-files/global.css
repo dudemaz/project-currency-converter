@@ -6,5 +6,6 @@ body{
     align-items: center;
     justify-content: center;
     padding: var(--space-20);
+    gap: var(--space-20);
 }
 

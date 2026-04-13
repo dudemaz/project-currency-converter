@@ -5,7 +5,8 @@
     max-width: 720px;
     padding: 24px;
     border-radius: 16px;
-    border: 1px solid #dcdcdc;
-    background: #ffffff;
+    border: 1px solid #38096a;
     position: relative;
+    background: var(--color-primary);
+    color: white;
 }
