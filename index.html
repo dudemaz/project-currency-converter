@@ -9,7 +9,9 @@
     <script defer type="module" src="js/main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jh3y/whirl@2.0.0/css/whirl.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.css" />
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <title>Currency Converter</title>
@@ -44,7 +46,7 @@
   </div>
 
   <div class="history">
-    <h2>История</h2>
+    <h2>🕘История</h2>
     <button id="openHistory">Открыть</button>
     <dialog class="" id="myDialog">
     <div id="historyblock"></div>
@@ -55,7 +57,7 @@
 </div>
   <div class="form-of-history-data">
     <label>Выбери дату:</label>
-  <input type="date" id="dateInput">
+  <input type="text" id="dateInput" placeholder="YYYY-MM-DD">
 
   <button id="historyLoadData">Загрузить курсы</button>
   <button id="returnActual">Вернуть актуальные курсы</button>

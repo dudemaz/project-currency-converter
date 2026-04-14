@@ -1,6 +1,17 @@
 import {convertCurrency} from '../features/convert/convert.js'
 import * as nodes from './domlists.js'
 import { LoadData } from '../api/api.js';
+import { renderHistoryItem } from '../features/history/historyLogic.js';
+
+let datepickerInstance = null;
+
+export function initDatePicker() {
+    datepickerInstance = new window.AirDatepicker(nodes.dateInput, {
+        autoClose: true,
+        dateFormat: 'yyyy-MM-dd',
+        isMobile: true
+    });
+}
 
 
 
@@ -59,8 +70,7 @@ export function currentresult() { // Подтягивание value из dom э�
 
 
 export async function loadRates(onLoaded = null) {
-    const input = document.getElementById('dateInput');
-    let date = input.value;
+    let date = nodes.dateInput.value;
     if (!date) {
         alert('Выбери дату в календаре!');
         return;
@@ -75,3 +85,10 @@ export async function loadRates(onLoaded = null) {
     }
 }
 
+export function loadHistoryUI() {
+    nodes.historyblock.innerHTML = "";
+    const history = JSON.parse(localStorage.getItem("history")) || [];
+    history.forEach(item => {
+        renderHistoryItem(item.from, item.to, item.result);
+    });
+}

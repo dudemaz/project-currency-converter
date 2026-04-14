@@ -63,7 +63,10 @@ function onLoadHistoryDataClick() {
     let data = await LoadData()
     renderCurrencySelectsOptions(data)
     initSelectChoices();
+        alert('Курсы обновлены')
 }
+
+
 export function bindUiHandlers() {
     nodes.returnActualDates.addEventListener('click', returnActual)
     nodes.button.addEventListener('click', onConvertClick);

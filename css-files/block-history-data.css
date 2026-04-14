@@ -9,4 +9,75 @@
     position: relative;
     background: var(--color-primary);
     color: white;
+    box-shadow: var(--shadow-app);
+    gap:  var(--space-10);
+
+}
+#historyLoadData{
+      width: 100%;
+  min-height: 50px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+}
+#historyLoadData:hover{
+    background: #f1f1f13a;
+    border: 1px solid #38096a;
+    color: #ffffff73;
+    transition: var(--transition-base);
+    cursor: pointer;
+    
+}
+#returnActual{
+    width: 100%;
+  min-height: 50px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+}
+#returnActual:hover{
+    background: #f1f1f13a;
+    border: 1px solid #38096a;
+    color: #ffffff73;
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+#dateInput{
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.air-datepicker {
+  --adp-color-primary: #6d28d9;
+  --adp-background-color-selected-other-month-focused: #ede9fe;
+  border: 1px solid #ddd6fe;
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(33, 19, 74, 0.24);
+  font-family: var(--font-main);
+}
+
+.air-datepicker-nav {
+  border-bottom: 1px solid #ede9fe;
+}
+
+.air-datepicker-cell.-selected- {
+  color: #ffffff;
+  background: #6d28d9;
 }
