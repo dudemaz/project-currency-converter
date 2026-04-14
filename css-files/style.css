@@ -127,7 +127,13 @@ h1 {
   font-weight: 600;
   cursor: pointer;
 }
-
+#convertBtn:hover{
+    background: #f1f1f13a;
+    border: 1px solid #38096a;
+    color: #ffffff73;
+    transition: var(--transition-base);
+    cursor: pointer;
+}
 .history {
   margin-top: 12px;
   display: flex;
@@ -136,7 +142,22 @@ h1 {
   flex-wrap: wrap;
 }
 
-#openHistory,
+#openHistory, #updateRates {
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-main);
+  padding: 10px 14px;
+  cursor: pointer;
+}
+#openHistory:hover, #updateRates:hover{
+    background: #f1f1f13a;
+    border: 1px solid #38096a;
+    color: #ffffff73;
+    transition: var(--transition-base);
+    cursor: pointer;
+}
 #closeBtn {
   border: 1px solid #d0d0d0;
   border-radius: 10px;
