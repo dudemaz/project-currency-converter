@@ -82,6 +82,7 @@
 - [Air Datepicker](https://air-datepicker.com/ru/docs)
 - `particles.js`
 - API ЦБ РФ: `https://www.cbr-xml-daily.ru/daily_json.js`
+- API ЦБ РФ: `https://www.cbr-xml-daily.ru/archive/daily_json.js`
 
 ## Локальный запуск
 
