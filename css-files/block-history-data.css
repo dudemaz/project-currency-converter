@@ -1,20 +1,19 @@
-.form-of-history-data{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 720px;
-    padding: 24px;
-    border-radius: 16px;
-    border: 1px solid #38096a;
-    position: relative;
-    background: var(--color-primary);
-    color: white;
-    box-shadow: var(--shadow-app);
-    gap:  var(--space-10);
-
+.form-of-history-data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 720px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #38096a;
+  position: relative;
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-app);
+  gap: var(--space-10);
 }
-#historyLoadData{
-      width: 100%;
+#historyLoadData {
+  width: 100%;
   min-height: 50px;
   border: 1px solid #d0d0d0;
   border-radius: 10px;
@@ -24,16 +23,15 @@
   font-size: 1rem;
   font-weight: 600;
 }
-#historyLoadData:hover{
-    background: #f1f1f13a;
-    border: 1px solid #38096a;
-    color: #ffffff73;
-    transition: var(--transition-base);
-    cursor: pointer;
-    
+#historyLoadData:hover {
+  background: #f1f1f13a;
+  border: 1px solid #38096a;
+  color: #ffffff73;
+  transition: var(--transition-base);
+  cursor: pointer;
 }
-#returnActual{
-    width: 100%;
+#returnActual {
+  width: 100%;
   min-height: 50px;
   border: 1px solid #d0d0d0;
   border-radius: 10px;
@@ -43,15 +41,15 @@
   font-size: 1rem;
   font-weight: 600;
 }
-#returnActual:hover{
-    background: #f1f1f13a;
-    border: 1px solid #38096a;
-    color: #ffffff73;
-    transition: var(--transition-base);
-    cursor: pointer;
+#returnActual:hover {
+  background: #f1f1f13a;
+  border: 1px solid #38096a;
+  color: #ffffff73;
+  transition: var(--transition-base);
+  cursor: pointer;
 }
 
-#dateInput{
+#dateInput {
   width: 100%;
   min-height: 48px;
   border: 1px solid #d0d0d0;

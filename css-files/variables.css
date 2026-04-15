@@ -1,49 +1,49 @@
 :root {
-    /* стиль текста */
-    --font-main: "Geologica", sans-serif;
-    --font-weight-medium: 500;
-    /* цвета */
-    --color-white: #ffffff;
-    --color-surface-dark: #111827;
-    --color-surface-dark-open: #1a2233;
-    --color-surface-highlight: #1f2937;
-    --color-primary:   #f1f1f13a;
-    --color-primary-alt: #0069d2;
-    --color-primary-strong: #0055ff;
-    --color-border-light: rgba(255, 255, 255, 0.1);
-    --color-shadow-strong: rgba(0, 0, 0, 0.8);
-    --color-shadow-soft: rgba(227, 225, 225, 0.5);
+  /* стиль текста */
+  --font-main: 'Geologica', sans-serif;
+  --font-weight-medium: 500;
+  /* цвета */
+  --color-white: #ffffff;
+  --color-surface-dark: #111827;
+  --color-surface-dark-open: #1a2233;
+  --color-surface-highlight: #1f2937;
+  --color-primary: #f1f1f13a;
+  --color-primary-alt: #0069d2;
+  --color-primary-strong: #0055ff;
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-shadow-strong: rgba(0, 0, 0, 0.8);
+  --color-shadow-soft: rgba(227, 225, 225, 0.5);
 
-    /* размеры */
-    --size-app-max-width: 440px;
-    --size-dialog-width: 300px;
-    --size-control-min-height: 44px;
+  /* размеры */
+  --size-app-max-width: 440px;
+  --size-dialog-width: 300px;
+  --size-control-min-height: 44px;
 
-    /* радиус */
-    --radius-app: 28px;
-    --radius-control: 30px;
-    --radius-dropdown: 20px;
-    --radius-item: 12px;
+  /* радиус */
+  --radius-app: 28px;
+  --radius-control: 30px;
+  --radius-dropdown: 20px;
+  --radius-item: 12px;
 
-    /* отступы */
-    --space-0: 0;
-    --space-8: 8px;
-    --space-10: 10px;
-    --space-15: 15px;
-    --space-16: 16px;
-    --space-20: 20px;
-    --space-30: 30px;
-    --space-40: 40px;
+  /* отступы */
+  --space-0: 0;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-15: 15px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-30: 30px;
+  --space-40: 40px;
 
-    /* эффекты */
-    --blur-app: 16px;
-    --blur-text-start: 12px;
-    --blur-text-end: 0px;
-    --translate-dropdown-start: -10px;
-    --translate-dropdown-end: 0;
-    --transition-fast: 0.2s ease;
-    --transition-base: 0.25s ease;
-    --transition-slow: 0.3s ease;
-    --shadow-app: 0 30px 60px -15px var(--color-shadow-strong);
-    --shadow-dialog: 0 10px 30px var(--color-shadow-soft);
- }
+  /* эффекты */
+  --blur-app: 16px;
+  --blur-text-start: 12px;
+  --blur-text-end: 0px;
+  --translate-dropdown-start: -10px;
+  --translate-dropdown-end: 0;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.3s ease;
+  --shadow-app: 0 30px 60px -15px var(--color-shadow-strong);
+  --shadow-dialog: 0 10px 30px var(--color-shadow-soft);
+}

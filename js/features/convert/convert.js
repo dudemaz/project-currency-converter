@@ -1,3 +1,3 @@
-export function convertCurrency(amount,from,to){  
-    return (amount * from) / to
+export function convertCurrency(amount, from, to) {
+  return (amount * from) / to;
 }

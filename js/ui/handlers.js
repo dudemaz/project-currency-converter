@@ -1,5 +1,10 @@
 import * as nodes from './domlists.js';
-import { currentresult, swapSelectOptions, loadRates, renderCurrencySelectsOptions } from './ui.js';
+import {
+  currentresult,
+  swapSelectOptions,
+  loadRates,
+  renderCurrencySelectsOptions,
+} from './ui.js';
 import { historylist } from '../features/history/historyLogic.js';
 import { LoadData } from '../api/api.js';
 
@@ -7,71 +12,70 @@ let fromChoices = null;
 let toChoices = null;
 
 export function initSelectChoices() {
-    if (fromChoices) fromChoices.destroy();
-    if (toChoices) toChoices.destroy();
+  if (fromChoices) fromChoices.destroy();
+  if (toChoices) toChoices.destroy();
 
-    fromChoices = new Choices('#from', {
-        searchEnabled: true,
-        itemSelectText: ''
-    });
-    toChoices = new Choices('#to', {
-        searchEnabled: true,
-        itemSelectText: ''
-    });
+  fromChoices = new Choices('#from', {
+    searchEnabled: true,
+    itemSelectText: '',
+  });
+  toChoices = new Choices('#to', {
+    searchEnabled: true,
+    itemSelectText: '',
+  });
 }
 
 function onConvertClick() {
-    if (nodes.amount.value.trim() === '' || nodes.amount.value.trim() < 0) {
-        return alert('Введите сумму');
-    }
+  if (nodes.amount.value.trim() === '' || nodes.amount.value.trim() < 0) {
+    return alert('Введите сумму');
+  }
 
-    currentresult();
-    historylist(
-        nodes.from.selectedOptions[0].text,
-        nodes.to.selectedOptions[0].text,
-        nodes.result.textContent
-    );
+  currentresult();
+  historylist(
+    nodes.from.selectedOptions[0].text,
+    nodes.to.selectedOptions[0].text,
+    nodes.result.textContent
+  );
 }
 
 function onSwapClick() {
-    const fromValue = nodes.from.value;
-    const toValue = nodes.to.value;
+  const fromValue = nodes.from.value;
+  const toValue = nodes.to.value;
 
-    swapSelectOptions();
-    fromChoices.setChoiceByValue(toValue);
-    toChoices.setChoiceByValue(fromValue);
+  swapSelectOptions();
+  fromChoices.setChoiceByValue(toValue);
+  toChoices.setChoiceByValue(fromValue);
 
-    if (nodes.amount.value.trim() !== '') {
-        currentresult();
-    }
+  if (nodes.amount.value.trim() !== '') {
+    currentresult();
+  }
 }
 
 function onOpenHistoryClick() {
-    nodes.modalWindow.show();
+  nodes.modalWindow.show();
 }
 
 function onCloseHistoryClick() {
-    nodes.modalWindow.close();
+  nodes.modalWindow.close();
 }
 
 function onLoadHistoryDataClick() {
-    loadRates(() => {
-        initSelectChoices();
-    });
-}
- async function returnActual(){
-    let data = await LoadData()
-    renderCurrencySelectsOptions(data)
+  loadRates(() => {
     initSelectChoices();
-        alert('Курсы обновлены')
+  });
 }
-
+async function returnActual() {
+  let data = await LoadData();
+  renderCurrencySelectsOptions(data);
+  initSelectChoices();
+  alert('Курсы обновлены');
+}
 
 export function bindUiHandlers() {
-    nodes.returnActualDates.addEventListener('click', returnActual)
-    nodes.button.addEventListener('click', onConvertClick);
-    nodes.swapButton.addEventListener('click', onSwapClick);
-    nodes.buttonToOpenWindow.addEventListener('click', onOpenHistoryClick);
-    nodes.buttonToCloweWindow.addEventListener('click', onCloseHistoryClick);
-    nodes.buttonLoadHistoryData.addEventListener('click', onLoadHistoryDataClick);
+  nodes.returnActualDates.addEventListener('click', returnActual);
+  nodes.button.addEventListener('click', onConvertClick);
+  nodes.swapButton.addEventListener('click', onSwapClick);
+  nodes.buttonToOpenWindow.addEventListener('click', onOpenHistoryClick);
+  nodes.buttonToCloweWindow.addEventListener('click', onCloseHistoryClick);
+  nodes.buttonLoadHistoryData.addEventListener('click', onLoadHistoryDataClick);
 }

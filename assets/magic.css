@@ -5,7 +5,7 @@
  */
 .puffIn {
   -webkit-animation-name: puffIn;
-          animation-name: puffIn;
+  animation-name: puffIn;
 }
 
 @-webkit-keyframes puffIn {
@@ -38,7 +38,7 @@
 }
 .puffOut {
   -webkit-animation-name: puffOut;
-          animation-name: puffOut;
+  animation-name: puffOut;
 }
 
 @-webkit-keyframes puffOut {
@@ -71,7 +71,7 @@
 }
 .vanishIn {
   -webkit-animation-name: vanishIn;
-          animation-name: vanishIn;
+  animation-name: vanishIn;
 }
 
 @-webkit-keyframes vanishIn {
@@ -104,7 +104,7 @@
 }
 .vanishOut {
   -webkit-animation-name: vanishOut;
-          animation-name: vanishOut;
+  animation-name: vanishOut;
 }
 
 @-webkit-keyframes vanishOut {
@@ -1870,11 +1870,15 @@
     opacity: 0;
     transform: scale(1, 1) translateY(900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
@@ -1884,11 +1888,15 @@
     opacity: 0;
     transform: scale(1, 1) translateY(900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
@@ -1899,11 +1907,15 @@
 }
 
 @-webkit-keyframes tinDownOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
@@ -1913,11 +1925,15 @@
   }
 }
 @keyframes tinDownOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
@@ -1936,11 +1952,15 @@
     opacity: 0;
     transform: scale(1, 1) translateX(-900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
@@ -1950,11 +1970,15 @@
     opacity: 0;
     transform: scale(1, 1) translateX(-900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
@@ -1965,11 +1989,15 @@
 }
 
 @-webkit-keyframes tinLeftOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
@@ -1979,11 +2007,15 @@
   }
 }
 @keyframes tinLeftOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
@@ -2002,11 +2034,15 @@
     opacity: 0;
     transform: scale(1, 1) translateX(900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
@@ -2016,11 +2052,15 @@
     opacity: 0;
     transform: scale(1, 1) translateX(900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
@@ -2031,11 +2071,15 @@
 }
 
 @-webkit-keyframes tinRightOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
@@ -2045,11 +2089,15 @@
   }
 }
 @keyframes tinRightOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateX(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateX(0);
   }
@@ -2068,11 +2116,15 @@
     opacity: 0;
     transform: scale(1, 1) translateY(-900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
@@ -2082,11 +2134,15 @@
     opacity: 0;
     transform: scale(1, 1) translateY(-900%);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
-  60%, 80%, 100% {
+  60%,
+  80%,
+  100% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
@@ -2097,11 +2153,15 @@
 }
 
 @-webkit-keyframes tinUpOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
@@ -2111,11 +2171,15 @@
   }
 }
 @keyframes tinUpOut {
-  0%, 20%, 40%, 50% {
+  0%,
+  20%,
+  40%,
+  50% {
     opacity: 1;
     transform: scale(1, 1) translateY(0);
   }
-  10%, 30% {
+  10%,
+  30% {
     opacity: 1;
     transform: scale(1.1, 1.1) translateY(0);
   }
@@ -2126,15 +2190,15 @@
 }
 .magictime {
   -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 @media (print), (prefers-reduced-motion) {
   .magictime {
     -webkit-animation: unset !important;
-            animation: unset !important;
+    animation: unset !important;
     transition: none !important;
   }
 }

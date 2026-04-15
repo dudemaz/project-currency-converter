@@ -1,27 +1,27 @@
-@import "reset.css";
-@import "fonts.css";
-@import "variables.css";
-@import "global.css";
-@import "block-history-data.css";
+@import 'reset.css';
+@import 'fonts.css';
+@import 'variables.css';
+@import 'global.css';
+@import 'block-history-data.css';
 
 .loader-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #0f172a;        
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    z-index: 10000;
-    color: #e2e8f0;
-    font-size: 1.3rem;
-    font-family: var(--font-main);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  z-index: 10000;
+  color: #e2e8f0;
+  font-size: 1.3rem;
+  font-family: var(--font-main);
 }
-#particles-js{
+#particles-js {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -29,12 +29,12 @@
   z-index: -1;
 }
 .loader-screen p {
-    margin: 0;
-    opacity: 0.9;
+  margin: 0;
+  opacity: 0.9;
 }
 
 #app.hidden {
-    display: none !important;
+  display: none !important;
 }
 #app {
   width: 100%;
@@ -88,7 +88,6 @@ h1 {
   align-items: center;
 }
 
-
 #swap {
   min-width: 48px;
   min-height: 48px;
@@ -109,7 +108,7 @@ h1 {
   align-items: center;
   justify-content: center;
   color: #111111;
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
   padding: 10px 12px;
@@ -127,12 +126,12 @@ h1 {
   font-weight: 600;
   cursor: pointer;
 }
-#convertBtn:hover{
-    background: #f1f1f13a;
-    border: 1px solid #38096a;
-    color: #ffffff73;
-    transition: var(--transition-base);
-    cursor: pointer;
+#convertBtn:hover {
+  background: #f1f1f13a;
+  border: 1px solid #38096a;
+  color: #ffffff73;
+  transition: var(--transition-base);
+  cursor: pointer;
 }
 .history {
   margin-top: 12px;
@@ -142,7 +141,8 @@ h1 {
   flex-wrap: wrap;
 }
 
-#openHistory, #updateRates {
+#openHistory,
+#updateRates {
   border: 1px solid #d0d0d0;
   border-radius: 10px;
   background: #ffffff;
@@ -151,12 +151,13 @@ h1 {
   padding: 10px 14px;
   cursor: pointer;
 }
-#openHistory:hover, #updateRates:hover{
-    background: #f1f1f13a;
-    border: 1px solid #38096a;
-    color: #ffffff73;
-    transition: var(--transition-base);
-    cursor: pointer;
+#openHistory:hover,
+#updateRates:hover {
+  background: #f1f1f13a;
+  border: 1px solid #38096a;
+  color: #ffffff73;
+  transition: var(--transition-base);
+  cursor: pointer;
 }
 #closeBtn {
   border: 1px solid #d0d0d0;
@@ -262,7 +263,7 @@ dialog {
   background: #fafafa;
   padding: 10px 12px;
 }
-h2{
+h2 {
   margin: 0;
   color: #ffffff;
   font-family: var(--font-main);
