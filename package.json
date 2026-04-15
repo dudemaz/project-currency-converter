@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "prepare": "husky"
   },
   "dependencies": {
     "@splinetool/runtime": "^1.12.74",
@@ -17,7 +18,10 @@
     "particles.js": "^2.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "gh-pages": "^6.3.0",
+    "husky": "^9.1.7",
     "vite": "^5.0.0"
   }
 }
