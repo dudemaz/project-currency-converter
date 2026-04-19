@@ -67,7 +67,10 @@ export function currentresult() {
 
   nodes.result.textContent = finalResult.toFixed(4);
 }
-
+export function loadDataInSpan() {
+   let date = nodes.dateInput.value;
+   nodes.DataCurrencyactually.textContent = `Курс данных на ${date}`
+}
 export async function loadRates(onLoaded = null) {
   let date = nodes.dateInput.value;
   if (!date) {

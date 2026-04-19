@@ -4,7 +4,7 @@ import {
   loadHistoryUI,
   initDatePicker,
 } from './ui/ui.js';
-import { initSelectChoices, bindUiHandlers } from './ui/handlers.js';
+import { initSelectChoices, bindUiHandlers,textDataReturn } from './ui/handlers.js';
 import { saveToLocalStorage, loadFromLocalStorage } from './storage/storage.js';
 import * as nodes from './ui/domlists.js';
 import { initParticles } from './animation/background.js';
@@ -26,6 +26,7 @@ export async function init() {
     }
     renderCurrencySelectsOptions(allRates);
     initSelectChoices();
+    textDataReturn()
     initDatePicker();
     bindUiHandlers();
     loadHistoryUI();

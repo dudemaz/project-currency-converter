@@ -13,3 +13,4 @@ export const historyblock = document.getElementById('historyblock');
 export const buttonLoadHistoryData = document.getElementById('historyLoadData');
 export const returnActualDates = document.getElementById('returnActual');
 export const dateInput = document.getElementById('dateInput');
+export const DataCurrencyactually = document.getElementById('DataCurrencyactually')

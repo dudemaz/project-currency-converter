@@ -4,6 +4,7 @@ import {
   swapSelectOptions,
   loadRates,
   renderCurrencySelectsOptions,
+  loadDataInSpan
 } from './ui.js';
 import { historylist } from '../features/history/historyLogic.js';
 import { LoadData } from '../api/api.js';
@@ -70,12 +71,18 @@ async function returnActual() {
   initSelectChoices();
   alert('Курсы обновлены');
 }
-
+export function textDataReturn(){
+  let data = new Date()
+  nodes.DataCurrencyactually.textContent = `Курс данных на ${data.toLocaleDateString('ru-RU')}`
+}
 export function bindUiHandlers() {
   nodes.returnActualDates.addEventListener('click', returnActual);
+  nodes.returnActualDates.addEventListener('click', textDataReturn);
   nodes.button.addEventListener('click', onConvertClick);
   nodes.swapButton.addEventListener('click', onSwapClick);
   nodes.buttonToOpenWindow.addEventListener('click', onOpenHistoryClick);
   nodes.buttonToCloweWindow.addEventListener('click', onCloseHistoryClick);
   nodes.buttonLoadHistoryData.addEventListener('click', onLoadHistoryDataClick);
+  nodes.buttonLoadHistoryData.addEventListener('click', loadDataInSpan);
+
 }
