@@ -168,7 +168,11 @@ h1 {
   padding: 10px 14px;
   cursor: pointer;
 }
-
+#DataCurrencyactually{
+  font-family: var(--font-main);
+  color: #ffffff;
+  opacity: 0.4
+}
 .choices {
   width: 100%;
   margin-bottom: 0 !important;
@@ -291,7 +295,7 @@ h2 {
 
 @media (max-width: 768px) {
   .app {
-    padding: 16px;
+    padding: 40px;
     border-radius: 12px;
   }
 
