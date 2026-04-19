@@ -1,109 +1,88 @@
 # Currency Converter
 
-Конвертер валют на Vanilla JavaScript с загрузкой курсов ЦБ РФ, историей операций и возможностью загружать архивные курсы по выбранной дате.
+Веб‑приложение на **Vanilla JavaScript (ES Modules)** для конвертации валют по курсам **ЦБ РФ**: актуальные и архивные курсы, кеш в `localStorage`, история операций, кастомный UI селектов и даты.
 
 ## Live Demo
 
-Проект уже задеплоен: [тык](http://64.188.61.83/)
+Демо: [http://64.188.61.83/](http://64.188.61.83/)
 
 ## Текущий статус
 
-Проект находится на **финальной стадии**: основной функционал реализован и стабильно работает.
+Проект на **финальной стадии**: основной функционал реализован и проверен.
 
 ### Реализовано
 
-- загрузка актуальных курсов валют с API ЦБ РФ;
-- кеширование курсов в `localStorage` с автообновлением каждые 24 часа;
-- конвертация суммы между валютами;
-- кастомные select через `Choices.js`;
-- swap валют;
-- история конвертаций с сохранением в `localStorage`;
-- подгрузка истории при старте приложения;
-- загрузка курсов по выбранной дате;
-- кнопка возврата к актуальным курсам;
-- loader и фоновые визуальные эффекты.
+- загрузка актуальных курсов: `https://www.cbr-xml-daily.ru/daily_json.js`;
+- архив по дате: `https://www.cbr-xml-daily.ru/archive/YYYY/MM/DD/daily_json.js`;
+- **кеш курсов** в `localStorage`: объект `{ rates, time }`, при старте проверка **TTL 24 часа** (без cookie);
+- конвертация суммы, вывод результата с `toFixed(4)`;
+- **Choices.js** — кастомные `<select>` валют (поиск, единый вид);
+- после перерисовки опций селектов выполняется **переинициализация Choices**, чтобы UI не расходился с DOM;
+- **swap** валют с синхронизацией `Choices.setChoiceByValue`;
+- **история** последних конвертаций в `localStorage` (до 10 записей);
+  - новая запись: `historylist` → рендер + сохранение;
+  - подгрузка при старте: `loadHistoryUI` → только `renderHistoryItem` (без повторного сохранения);
+- загрузка курсов по выбранной дате и кнопка **«Вернуть актуальные курсы»**;
+- индикатор актуальности/даты данных в `#DataCurrencyactually` (`textDataReturn`, `loadDataInSpan`);
+- экран загрузки (**Whirl CSS**), фон **particles.js**, стили блока даты — `block-history-data.css`, анимации — `assets/magic.css`.
 
-## Важная библиотека для даты
+### Библиотека для даты
 
-Для кастомного поля даты используется библиотека **Air Datepicker**  
-(вместо стандартного браузерного `input type="date"`).
-
-Это дало:
-
-- единый внешний вид в разных браузерах;
-- удобный календарь для выбора даты;
-- контролируемый формат даты `yyyy-MM-dd` для запроса в API.
-
+Для поля даты используется **Air Datepicker** (вместо нативного `type="date"`): единый вид в браузерах и формат **`yyyy-MM-dd`** для API.  
 Документация: [Air Datepicker](https://air-datepicker.com/ru/docs)
 
-## Как работает приложение
+## Как устроено приложение
 
-1. `main.js`:
-   - показывает loader;
-   - берет курсы из `localStorage` или запрашивает API;
-   - рендерит валюты в select;
-   - инициализирует `Choices.js`, `Air Datepicker`, UI-обработчики;
-   - подгружает историю из `localStorage`.
-2. `api/api.js`:
-   - запрашивает актуальные или архивные курсы;
-   - проверяет корректность ответа;
-   - возвращает объект с `Valute`.
-3. `ui/ui.js`:
-   - рендер валют в select;
-   - расчет результата конвертации;
-   - загрузка курсов на выбранную дату;
-   - инициализация datepicker;
-   - отрисовка истории из хранилища.
-4. `ui/handlers.js`:
-   - все пользовательские события (convert, swap, open/close history, load by date, return actual).
-5. `features/history/historyLogic.js`:
-   - рендер записи истории;
-   - сохранение новой записи в `localStorage`.
-6. `storage/storage.js`:
-   - сохранение/чтение курсов;
-   - сохранение истории.
+1. **`js/main.js`** — точка входа: loader → кеш/API → `renderCurrencySelectsOptions` → `initSelectChoices` → `textDataReturn` → `initDatePicker` → `bindUiHandlers` → `loadHistoryUI`.
+2. **`js/api/api.js`** — `LoadData(date?)`: fetch, проверка `response.ok` и наличия `Valute`.
+3. **`js/storage/storage.js`** — сохранение/чтение курсов с TTL; `saveHistoryItem` для истории.
+4. **`js/ui/ui.js`** — рендер валют, `currentresult`, `loadRates` (колбэк после загрузки для переинициализации Choices), `initDatePicker`, `loadHistoryUI`, `loadDataInSpan`.
+5. **`js/ui/handlers.js`** — обработчики: конвертация, swap, модалка истории, загрузка по дате, возврат к актуальным, привязка обновления span к кнопкам.
+6. **`js/ui/domlists.js`** — ссылки на DOM‑элементы.
+7. **`js/features/`** — формула конвертации (`convert.js`), история (`historyLogic.js`: `renderHistoryItem`, `historylist`).
+8. **`js/animation/background.js`** — инициализация `particles.js`.
 
-## Структура проекта
+## Структура репозитория
 
-- `index.html` — разметка;
-- `css-files/` — стили интерфейса;
-- `js/main.js` — точка входа;
-- `js/api/` — работа с API;
-- `js/ui/` — UI-логика, DOM, обработчики;
-- `js/features/` — фичи (конвертация, история);
-- `js/storage/` — локальное хранилище;
-- `js/animation/` — частицы и визуальные эффекты.
+| Путь                               | Назначение                                                 |
+| ---------------------------------- | ---------------------------------------------------------- |
+| `index.html`                       | Разметка, CDN: Choices, Air Datepicker, particles, Whirl   |
+| `css-files/style.css`              | Основные стили, импорты reset/fonts/variables/global и др. |
+| `css-files/block-history-data.css` | Блок выбора даты и кнопок архива                           |
+| `assets/magic.css`                 | Классы анимаций (путь от корня сайта)                      |
+| `js/main.js`                       | Инициализация приложения                                   |
+| `js/api/`                          | Запросы к API ЦБ                                           |
+| `js/ui/`                           | DOM, рендер, обработчики, datepicker                       |
+| `js/features/`                     | Конвертация, история                                       |
+| `js/storage/`                      | `localStorage`                                             |
+| `js/animation/`                    | Фон particles                                              |
 
 ## Технологии
 
-- HTML5
-- CSS3
-- JavaScript (ES Modules)
+- HTML5, CSS3, JavaScript (ES Modules)
 - [Choices.js](https://github.com/Choices-js/Choices)
-- [Air Datepicker](https://air-datepicker.com/ru/docs)
-- `particles.js`
-- API ЦБ РФ: `https://www.cbr-xml-daily.ru/daily_json.js`
-- API ЦБ РФ: `https://www.cbr-xml-daily.ru/archive/daily_json.js`
+- [Air Datepicker 3.6](https://air-datepicker.com/ru/docs)
+- [particles.js](https://github.com/VincentGarreau/particles.js/)
+- [@jh3y/whirl](https://www.npmjs.com/package/@jh3y/whirl) — спиннер loader
+- API ЦБ РФ: `daily_json.js` и архив `archive/{year}/{month}/{day}/daily_json.js`
 
 ## Локальный запуск
 
-1. Клонировать проект:
+1. Клонировать репозиторий:
    ```bash
    git clone https://github.com/dudemaz/project-currency-converter
    cd "project-currency converter"
    ```
-2. Запустить через локальный сервер (например, Live Server в VS Code).
+2. Открыть проект через **локальный HTTP‑сервер** (Live Server и т.п.) — из‑за `fetch` и ES‑modules файл `index.html` с диска напрямую нежелателен.
+3. Если не подгружается `assets/magic.css`, проверьте, что сервер отдаёт корень проекта как `/` (у абсолютного пути `/assets/magic.css`).
 
-## Что планируется дальше
+## Планы на развитие
 
-- добавить тесты (unit/integration);
-- довести UX до полностью polished-версии;
-- продолжить рефакторинг и улучшение читаемости кода.
+- автотесты (unit/integration);
+- замена `alert` на ненавязчивые уведомления в UI;
+- расширение истории (сумма, дата операции);
+- дальнейший рефакторинг и выравнивание нейминга.
 
-## Принятое решение по кешу
+## Кеш без cookie
 
-Изначально рассматривалась реализация TTL через cookie, но в финальной версии выбрана более простая и понятная схема:
-
-- данные курсов хранятся в `localStorage`;
-- при старте приложения проверяется время сохранения;
-- если прошло более 24 часов, данные считаются устаревшими и загружаются заново из API.
+TTL реализован через **timestamp в `localStorage`** вместе с курсами: при каждом старте сравнивается возраст записи с **24 часами**; отдельные cookie для этого не используются.
