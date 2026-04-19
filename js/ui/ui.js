@@ -1,7 +1,7 @@
 import { convertCurrency } from '../features/convert/convert.js';
 import * as nodes from './domlists.js';
 import { LoadData } from '../api/api.js';
-import {textDataReturn} from './handlers.js'
+import { textDataReturn } from './handlers.js';
 import { renderHistoryItem } from '../features/history/historyLogic.js';
 
 let datepickerInstance = null;
@@ -69,8 +69,8 @@ export function currentresult() {
   nodes.result.textContent = finalResult.toFixed(4);
 }
 export function loadDataInSpan() {
-   let date = nodes.dateInput.value;
-   nodes.DataCurrencyactually.textContent = `Курс данных на ${date}`
+  let date = nodes.dateInput.value;
+  nodes.DataCurrencyactually.textContent = `Курс данных на ${date}`;
 }
 
 export async function loadRates(onLoaded = null) {
@@ -86,9 +86,9 @@ export async function loadRates(onLoaded = null) {
     alert('Курсы загружены');
   } else {
     alert(
-                'Не удалось загрузить курсы на эту дату. Попробуй другую или проверь интернет. PS:курсы обновлены на актуальную дату'
+      'Не удалось загрузить курсы на эту дату. Попробуй другую или проверь интернет. PS:курсы обновлены на актуальную дату'
     );
-   textDataReturn()
+    textDataReturn();
   }
 }
 
