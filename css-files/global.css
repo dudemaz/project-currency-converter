@@ -4,6 +4,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-20);
+  padding: clamp(12px, 4vw, var(--space-20));
   gap: var(--space-20);
+  min-height: 100dvh;
+  overflow-x: hidden;
 }

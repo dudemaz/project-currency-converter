@@ -1,5 +1,5 @@
 @import 'reset.css';
-@import 'fonts.css';
+@import 'font.css';
 @import 'variables.css';
 @import 'global.css';
 @import 'block-history-data.css';
@@ -86,9 +86,16 @@ h1 {
   flex-direction: row;
   gap: 12px;
   align-items: center;
+  width: 100%;
+}
+
+.selects .choices {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 #swap {
+  flex: 0 0 auto;
   min-width: 48px;
   min-height: 48px;
   border: 1px solid #d0d0d0;
@@ -168,10 +175,10 @@ h1 {
   padding: 10px 14px;
   cursor: pointer;
 }
-#DataCurrencyactually{
+#DataCurrencyactually {
   font-family: var(--font-main);
   color: #ffffff;
-  opacity: 0.4
+  opacity: 0.4;
 }
 .choices {
   width: 100%;
@@ -294,8 +301,8 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .app {
-    padding: 40px;
+  #app {
+    padding: 16px;
     border-radius: 12px;
   }
 

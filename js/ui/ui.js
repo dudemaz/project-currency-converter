@@ -66,7 +66,7 @@ export function currentresult() {
     finalResult = convertCurrency(amount, from, to);
   }
 
-  nodes.result.textContent = finalResult.toFixed(4);
+  nodes.result.textContent = finalResult.toFixed(2);
 }
 export function loadDataInSpan() {
   let date = nodes.dateInput.value;

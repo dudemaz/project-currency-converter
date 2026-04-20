@@ -4,11 +4,15 @@ import {
   loadHistoryUI,
   initDatePicker,
 } from './ui/ui.js';
-import { initSelectChoices, bindUiHandlers,textDataReturn } from './ui/handlers.js';
+import {
+  initSelectChoices,
+  bindUiHandlers,
+  textDataReturn,
+} from './ui/handlers.js';
 import { saveToLocalStorage, loadFromLocalStorage } from './storage/storage.js';
 import * as nodes from './ui/domlists.js';
 import { initParticles } from './animation/background.js';
-
+// импорт всех функций для сборки приложения и инициализации
 let allRates = null;
 
 export async function init() {
@@ -24,9 +28,10 @@ export async function init() {
       allRates = await LoadData();
       saveToLocalStorage(allRates);
     }
+    // вызов функций
     renderCurrencySelectsOptions(allRates);
     initSelectChoices();
-    textDataReturn()
+    textDataReturn();
     initDatePicker();
     bindUiHandlers();
     loadHistoryUI();

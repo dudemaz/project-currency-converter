@@ -12,6 +12,13 @@
   box-shadow: var(--shadow-app);
   gap: var(--space-10);
 }
+
+@media (max-width: 768px) {
+  .form-of-history-data {
+    padding: 16px;
+    border-radius: 12px;
+  }
+}
 #historyLoadData {
   width: 100%;
   min-height: 50px;
